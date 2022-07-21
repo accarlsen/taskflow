@@ -36,11 +36,13 @@ Step 1: Add a .env file to the /server folder and define the follwing variables:
 
 The domain field is used by the server to set cookies.
 
-Step 2: Run the following command in the /server folder to download packages: `go get`
+Step 2: In the files middleware.go & schema.resolvers.go, define: `let databaseCon = db.Connect("<MONGODB-CONNECTION-URL>")`
 
-Step 3: In order to start the server, run: `go run server.go`
+Step 3: Run the following command in the /server folder to download packages: `go get`
 
-Step 4: In order to generate new models after changing the schema, run: `go run github.com/99designs/gqlgen init`
+Step 4: In order to start the server, run: `go run server.go`
+
+Step 5: In order to generate new models after changing the schema, run: `go run github.com/99designs/gqlgen init`
 
 <br></br>
 ### Notable external libraries:
