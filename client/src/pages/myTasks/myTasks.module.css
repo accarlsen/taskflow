@@ -1,0 +1,43 @@
+.wrapperPre{
+    width: 100%;
+    text-align: center;
+}
+
+.button{
+    width: fit-content;
+    font-family: 'Roboto', 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 6px 20px 6px 20px;
+    color: #8f8f8f;
+    cursor: pointer;
+    transition: 0.3s, smooth;
+}
+
+.button:hover{
+    color: black;
+    box-shadow: 0px 1px 8px 1px #8f8f8f;
+}
+
+.button:active{
+    color:black;
+    box-shadow: 0px 1px 8px 1px #8f8f8f;
+}
+
+.wrapperWrapper{
+    margin: auto;
+    margin-bottom: 2rem;
+    width: fit-content;
+    border-radius: 2px;
+    min-height: fit-content;
+    min-width: 400px;
+    max-width: 600px;
+    padding: 1rem;
+    box-shadow: 0px 2px 4px 2px var(--shadow-color);
+    background-color: var(--background2-color);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

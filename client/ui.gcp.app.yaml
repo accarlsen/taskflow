@@ -1,0 +1,16 @@
+runtime: nodejs14
+
+handlers:
+    - url: /(.*\..+)$
+      static_files: build/\1
+      upload: build/(.*\..+)$
+      secure: always
+      redirect_http_response_code: 301
+    - url: /.*
+      static_files: build/index.html
+      upload: build/index.html
+      secure: always
+      redirect_http_response_code: 301
+
+env_variables:
+    REACT_APP_BACKENDHOST: https://api-dot-taskflow-303114.ew.r.appspot.com/query

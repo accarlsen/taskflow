@@ -1,0 +1,32 @@
+.wrapper{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 2px solid grey;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 0.7rem;
+    margin: -0.70rem;
+    outline: none;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    max-height: 10rem;
+    max-width: 9.9rem;
+    min-width: 9.9rem;
+    background-color: var(--background2-color);
+}
+
+.text{
+    border-bottom: 3px dashed grey;
+    padding: 0.5rem;
+    min-width: 9rem;
+    text-align: center;
+}
+
+.doneCheckmark{
+    position: relative;
+    height: 1.1rem;
+    width: 2rem;
+    vertical-align: middle;
+    top: -0.2rem;
+    right: 0.45rem;
+}

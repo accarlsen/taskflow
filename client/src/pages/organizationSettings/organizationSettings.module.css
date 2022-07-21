@@ -1,0 +1,162 @@
+.wrapper {
+  margin: auto;
+  margin-top: 3rem;
+  grid-template-columns: auto auto auto;
+  width: fit-content;
+  min-width: 300px;
+  max-width: 80%;
+  padding: 3rem;
+  background-color: var(--background2-color);
+  box-shadow: 0px 2px 4px 2px var(--shadow-color);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.title {
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.wrapper2 {
+  display: grid;
+  margin-left: 11rem;
+  margin-right: 11rem;
+  padding: 0.5rem;
+  grid-template-columns: auto auto;
+}
+
+.pageWrapper {
+  margin: auto;
+  text-align: center;
+}
+
+.inline {
+  display: grid;
+  grid-template-columns: 3.5rem 15rem;
+}
+
+.inlineButtons {
+  display: grid;
+  grid-template-columns: 6rem 5rem;
+  column-gap: 0.5rem;
+}
+
+.description {
+  outline: none;
+  width: 18.5rem;
+  height: 5rem;
+  resize: none;
+  border: solid 1px var(--grey-light);
+}
+
+.description:focus {
+  border: solid 1px var(--grey);
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 12rem 6rem 14rem auto;
+  column-gap: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  border-top: 1px solid var(--grey-light);
+}
+
+.addMember {
+  display: grid;
+  grid-template-columns: 10rem auto auto;
+  column-gap: 0.5rem;
+  width: fit-content;
+}
+
+.addMemberError {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 0.5rem;
+  width: fit-content;
+}
+
+.errorMsg {
+  margin-right: 10rem;
+  left: -1.8rem;
+  top: -0.4rem;
+  position: relative;
+}
+
+.userSelectWrapper {
+  position: absolute;
+  left: 0rem;
+  display: grid;
+  grid-template-rows: repeat(1.2rem);
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+  overflow: hidden;
+
+  border-radius: 6px;
+  border: 1px solid var(--grey-light);
+  background-color: var(--grey-light);
+}
+
+.userSelectedDisplay {
+  padding: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 6px;
+  background-color: var(--grey-light);
+}
+
+.userSelectSearch {
+  border: none;
+  outline: none;
+  font-family: "Roboto";
+  font-size: 12px;
+  z-index: 109;
+  background-color: var(--grey-light);
+
+  width: 100%;
+  height: 1.2rem;
+
+  padding: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.userSelectOptions {
+  height: 1.5rem;
+  width: 100%;
+  background-color: var(--background2-color);
+  border-top: 1px solid var(--grey-light);
+  z-index: 110;
+}
+
+.userSelectOptions:hover {
+  background-color: var(--grey-light);
+}
+
+.userSelectOptions > * {
+  font-family: "Roboto";
+  font-size: 12px;
+  height: 1.5rem;
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.roleWrapper {
+  position: relative;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  height: 1.2rem;
+}

@@ -1,0 +1,72 @@
+.infoIcon{
+    height: 1rem;
+    width: 3rem;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    cursor: pointer;
+
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    text-align: center;
+}
+.wrapper{
+    position: relative;
+    height: 0px;
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+
+
+.buttonText {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 1.55rem;
+    transition: 0.3s, smooth;
+}
+.button {
+    border: 1px solid var(--grey);
+    border-radius: 20px;
+    position: absolute;
+    width: fit-content;
+    margin-left: 3rem;
+    background-image: var(--primary-gradient);
+}
+.buttonText:hover,
+.buttonText:focus {
+  color: var(--text);
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 500;
+  padding: 1rem;
+}
+.button:hover{
+    color: var(--text);
+}
+
+
+.shortcutsGuideWrapper{
+    background-color: var(--background2-color);
+    position: relative;
+    max-width: 500px;
+    height: 68vh;
+    overflow-y: auto;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 50vw;
+    box-shadow: 0px 1px 2px 1px var(--shadow-color);
+    padding: 3rem;
+    z-index: 100;
+    display: grid;
+}
+
+.background {
+    position: absolute;
+    width: calc(100vw - 200px);
+    height: 100vh;
+    z-index: 98;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }

@@ -1,0 +1,79 @@
+.wrapper{
+    width: fit-content;
+    min-width: 250px;
+    max-width: 250px;
+    margin: 1rem;
+    grid-template-columns: auto auto auto;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 1px #c4c4c4;
+    padding: 0.5rem;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.outerWrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.outerestWrapper{
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 1px #c4c4c4;
+    padding: 0.5rem;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.button{
+    width: fit-content;
+    min-width: 200px;
+    max-width: 200px;
+    margin-top: 0.75rem;
+    grid-template-columns: auto auto auto;
+    border-radius: 1px;
+    box-shadow: 0px 1px 2px 1px #c4c4c4;
+    padding: 0.5rem;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.button:hover{
+    color: black;
+    box-shadow: 0px 1px 2px 1px #8f8f8f;
+}
+
+.button:focus{
+    color: black;
+    box-shadow: 0px 1px 8px 1px #858484;
+}
+
+.wrapperMenu{
+    width: fit-content;
+    min-width: 200px;
+    max-width: 200px;
+    margin-top: 0.75rem;
+    grid-template-columns: auto auto auto;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 1px #c4c4c4;
+    padding: 0.5rem;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.assignedMenu{
+    overflow-y: scroll;
+    max-height: 12rem;
+    max-width: 100%;
+    min-width: fit-content;
+}
+
+.inline{
+    display: grid;
+    grid-template-columns: 10rem 15rem;
+    width: fit-content;
+}

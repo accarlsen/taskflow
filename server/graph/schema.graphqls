@@ -1,0 +1,435 @@
+# GraphQL Schema
+
+# go run github.com/99designs/gqlgen for generating resolvers
+
+# Types
+
+type Task {
+  id: ID!
+  name: String!
+  description: String
+  authorID: ID!
+  orgID: ID
+  phaseID: ID
+  assignedID: ID
+  progress: Int
+  weight: Int
+  state: String
+  createDate: String!
+  createTime: String!
+  deadlineDate: String!
+  deadlineTime: String!
+  archived: Boolean!
+  nextTasks: [ID]
+  subtasks: [Subtask]!
+  ready: Boolean
+  soonReady: Boolean
+  firstTask: Boolean
+  subtaskAssignees: [ID]
+  subtaskDeadlines: [String]
+}
+
+type Subtask {
+  id: ID!
+  name: String!
+  description: String
+  progress: Int
+  weight: Int
+  parentID: ID!
+  phaseID: ID
+  orgID: ID
+  authorID: ID
+  assignedID: ID
+  state: String
+  createDate: String!
+  createTime: String!
+  deadlineDate: String!
+  deadlineTime: String!
+  archived: Boolean!
+}
+
+type User {
+  id: ID!
+  gID: String!
+  fname: String!
+  lname: String!
+  email: String!
+  image: String!
+}
+
+type Project {
+  id: ID!
+  name: String!
+  description: String
+  progress: Int!
+  weight: Int!
+  startDate: String!
+  endDate: String!
+  archived: Boolean!
+  currentPhase: ID
+  organizationID: ID!
+  createdByID: ID!
+  membersID: [ID!]!
+  projectLeadID: ID!
+  projectMonitorID: ID
+  #icon: [Image]
+}
+
+type Phase {
+  id: ID!
+  name: String!
+  projectID: ID!
+  progress: Int!,
+  weight: Int!,
+  startDate: String!
+  endDate: String!
+  states: [String!]!
+  nextPhase: ID
+  archived: Boolean
+}
+
+type CustomClaims {
+  userName: String!
+  expiresAt: Int!
+  issuer: String!
+} 
+
+type AuthToken {
+  accessToken: String!
+  refreshToken: String!
+}
+
+type Organization {
+  id: ID!
+  name: String!
+  description: String!
+  numMembers: Int!
+  membersID: [ID!]!
+  adminsID: [ID!]!
+  ownerID: ID!
+  projects: [ID!]
+  orgTasks: [Task!]
+  orgReminders: [ID!]
+  # icon: !String
+}
+
+type AuthRes{
+  iss: String!
+  sub: String!
+  azp: String!
+  aud: String!
+  iat: String!
+  exp: String!
+  email: String!
+  emailVerified: String!
+  name: String!
+  picture: String!
+  givenName: String!
+  familyName: String!
+  locale: String!
+}
+
+type GInfoRes{
+  id: String!
+  email: String!
+  emailVerified: String!
+  name: String!
+  given_name: String!
+  family_name: String!
+  picture: String!
+  locale: String!
+  hd: String!
+}
+
+# Queries
+
+type Query {
+  # Task Queries
+  tasks: [Task!]!
+  task(taskID: ID!): Task!
+  taskByName(name: String!): Task!
+  tasksInOrg(orgID: ID!): [Task]!
+  tasksInPhase(phaseID: ID!): [Task]!
+  tasksByStateOrg(orgID: ID!, state: String!): [Task]!
+  tasksByStatePhase(phaseID: ID!, state: String!): [Task]!
+  tasksAssigned(orgID: ID!, assignedID: ID!, archived: Boolean!, period: Int!): [Task]!
+  tasksByAuthor(orgID: ID!, authorID: ID!, archived: Boolean!, period: Int!): [Task]!
+  tasksMadeByLoggedUser: [Task]!
+  subtasksOfParent(taskID: ID!): [Subtask]
+  subtasksByAuthor(authorID: ID!, orgID: ID!, archived: Boolean!): [Subtask]
+
+  # User Queries
+  users:[User!]!
+  user(userID: ID!): User!
+  userOrgs: [Organization]!
+  userByName(name:String!): User!
+
+  # Organization Queries
+  org(orgID: ID!): Organization!
+  orgUsers(orgID: ID!): [User!]!
+  orgAdmins(orgID: ID!): [User!]!
+  # orgMembers(orgID: ID!): [ID!]!
+
+  # Project Queries
+  projects(orgID: ID!): [Project]!
+  project(projectID: ID!): Project!
+  membersInProject(projectID: ID!):[User]!
+
+  #Phase queries
+  phases(projectID: ID!): [Phase!]!
+  phase(phaseID: ID!): Phase!
+}
+
+# Inputs
+
+# Users
+
+input NewUser {
+  gID: String!
+  fname: String!
+  lname: String!
+  email: String!
+  image: String!
+}
+
+# Tasks
+
+input NewTask {
+  name: String!
+  description: String
+  assignedID: ID
+  orgID: ID
+  authorID: ID!
+  phaseID: ID
+  progress: Int
+  weight: Int
+  ready: Boolean
+  state: String
+  deadlineDate: String!
+  deadlineTime: String!
+  createDate: String
+  createTime: String
+  archived: Boolean
+  nextTasks: [ID]
+  subtaskAssignees: [ID]
+  subtaskDeadlines: [String]
+  soonReady: Boolean
+  firstTask: Boolean
+}
+
+input UpdateTask {
+  name: String
+  description: String
+  progress: Int
+  orgID: ID
+  phaseID: ID
+  assignedID: ID
+  weight: Int
+  state: String
+  deadlineDate: String
+  deadlineTime: String
+  nextTasks:[ID]
+  subtasks: [UpdateSubtask]
+  firstTask: Boolean
+  subtaskAssignees: [ID]
+  tasksInParallell: [String]
+}
+
+input NewSubtask{
+  name: String
+  description: String
+  assignedID: ID
+  orgID: ID
+  authorID: ID!
+  phaseID: ID
+  progress: Int
+  weight: Int
+  state: String
+  deadlineDate: String
+  deadlineTime: String
+  createDate: String
+  createTime: String
+  archived: Boolean
+  parentID: ID
+}
+
+input UpdateSubtask{
+  name: String
+  description: String
+  assignedID: ID
+  orgID: ID
+  authorID: ID
+  phaseID: ID
+  progress: Int
+  weight: Int
+  state: String
+  deadlineDate: String
+  deadlineTime: String
+  createDate: String
+  createTime: String
+  archived: Boolean
+  parentID: ID
+  tasksInParallell: [String]
+}
+
+# Organizations
+
+input NewOrg {
+  name: String!
+  description: String!
+  numMembers: Int
+  ownerID: ID
+  adminsID: [ID!]
+  membersID: [ID!]
+}
+
+input EditOrg {
+  name: String!
+  description: String!
+}
+
+input ChangeOwnerOrg {
+  ownerID: ID!
+}
+
+input AddProject {
+  projects:[ID!]!
+}
+
+input LoginRequest{
+  gID: String!
+  accessToken: String!
+  email: String!
+  fname: String!
+  lname: String!
+  image: String!
+}
+
+input TokenRequest{
+  refreshToken: String!
+}
+
+#Projects
+
+input NewProject{
+  name: String!
+  description: String
+  startDate: String!
+  endDate: String!
+  organizationID: ID!
+  membersID: [ID]
+  projectLeadID: ID!
+  projectMonitorID: ID
+  archived: Boolean
+}
+
+input NewProjectMod{
+  name: String!
+  description: String
+  progress: Int!
+  weight: Int!
+  startDate: String!
+  endDate: String!
+  organizationID: ID!
+  createdByID: ID!
+  membersID: [ID]!
+  projectLeadID: ID!
+  projectMonitorID: ID
+  archived: Boolean!
+}
+
+input EditProject{
+  name: String!
+  description: String!
+  startDate: String!
+  endDate: String!
+  archived: Boolean
+  projectLeadID: ID!
+  projectMonitorID: ID!
+  currentPhase: ID!
+}
+
+#Phases
+
+input NewPhase{
+  name: String!
+  projectID: ID!
+  progress: Int!
+  weight: Int!
+  startDate: String!
+  endDate: String!
+  states: [String!]!
+  archived: Boolean
+}
+
+input EditPhase{
+  name: String!
+  startDate: String!
+  endDate: String!
+}
+
+input ArchivePhase{
+  archived: Boolean
+}
+
+input ArchiveProject {
+  archived: Boolean
+}
+
+# Mutations
+
+type Mutation {
+  # Task Mutations
+  updateTask(taskID: ID!, input: UpdateTask!): Task!
+  assignTask(taskID: ID!, email: String!): Task
+  addTaskToPhase(taskID: ID!, phaseID: ID!): Task
+  removeTaskFromPhase(taskID: ID!, phaseID: ID!): Task
+  updateTaskState(taskID: ID!, input: UpdateTask!): Task
+  createTask(input: NewTask!): Task!
+  deleteTask(taskID:ID!) : Task
+  archiveTask(taskID: ID!, archived: Boolean!): Task!
+  updateTaskDep(taskID: ID!, input: UpdateTask!): Task
+  removeTaskDep(taskID: ID!, input: UpdateTask!): Task
+
+  # Subtask Mutations
+  newSubTask(taskID: ID!, input: NewSubtask!): Subtask
+  updateSubTask(subtaskID: ID!, input: UpdateSubtask!): Subtask
+  archiveSubtask(subtaskID: ID!, input: UpdateSubtask!): Subtask 
+  setSubtaskState(subtaskID: ID!, input: UpdateSubtask!): Subtask
+
+  # User Mutations
+  updateUser(userID: ID!, input: NewUser!): User!
+  createUser(input: NewUser!): User!
+  deleteUser(userID: ID!): User
+  setClaims(orgID: ID!): AuthToken!
+
+  # Organization Mutations
+  updateOrganization(orgID: ID!, input: EditOrg!): Organization
+  addMember(orgID: ID!, email: String!): Organization
+  removeMember(orgID: ID!, email: String!): Organization
+  addAdmin(orgID: ID!, email: String!): Organization
+  removeAdmin(orgID: ID!, email: String!): Organization
+  createOrganization(input: NewOrg!): Organization!
+  deleteOrganization(orgID: ID!): Organization
+
+  # Project Mutations
+  newProject(input: NewProject!): Project
+  updateProject(projectID: ID!, input: EditProject!): Project 
+  addMemberToProject(projectID: ID!, userID: ID!): Project
+  removeMemberFromProject(projectID: ID!, userID: ID!):Project
+  archiveProject(projectID: ID!, input: ArchiveProject!): Project
+
+  # Phase Mutations
+  newPhase(input: NewPhase!): Phase
+  updatePhase(phaseID: ID!, input: EditPhase!): Phase
+  deletePhase(phaseID: ID!, projectID: ID!):Phase
+  newState(phaseID: ID!, state: String!):Phase
+  deleteState(phaseID: ID!, state: String!):Phase
+  archivePhase(phaseID: ID!, input: ArchivePhase!): Phase
+
+  #Authentication Mutations
+  login(input: LoginRequest!): AuthToken!
+  renewToken(input: TokenRequest!): AuthToken!
+  logout: AuthToken
+  
+}

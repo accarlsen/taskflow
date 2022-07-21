@@ -1,0 +1,62 @@
+{
+    "name": "client",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@apollo/client": "^3.3.7",
+        "@testing-library/jest-dom": "^5.11.9",
+        "@testing-library/react": "^11.2.3",
+        "@testing-library/user-event": "^12.6.0",
+        "@use-it/event-listener": "^0.1.6",
+        "apollo-link-context": "^1.0.20",
+        "apollo-link-http": "^1.5.17",
+        "apollo-upload-client": "^14.1.3",
+        "dagre": "^0.8.5",
+        "dotenv": "^8.2.0",
+        "graphql": "^15.4.0",
+        "jwt-decode": "^3.1.2",
+        "react": "^17.0.1",
+        "react-dnd": "^14.0.2",
+        "react-dnd-html5-backend": "^14.0.0",
+        "react-dom": "^17.0.1",
+        "react-flow-renderer": "^9.0.1",
+        "react-google-login": "^5.2.2",
+        "react-resize-panel": "^0.3.5",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^4.0.1",
+        "react-spring": "^9.0.0",
+        "universal-cookie": "^4.0.4",
+        "web-vitals": "^0.2.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "gcp-build": "react-scripts build",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "node": true,
+            "shared-node-browser": true,
+            "jest": true
+        },
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

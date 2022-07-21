@@ -1,0 +1,79 @@
+.wrapper{
+    width: 36rem;
+    margin: auto;
+    min-height: fit-content;
+}
+
+.doneCheckmark{
+    position: relative;
+    height: 1.1rem;
+    width: 2rem;
+    vertical-align: middle;
+    top: -0.6rem;
+    right: 0.45rem;
+}
+
+.editTask{
+    position: relative;
+    right: 0rem;
+    margin-left: 1rem;
+}
+
+.doneButton{
+    margin-top: 0.1rem;
+    height: 0.8rem;
+    width: 0.8rem;
+    background-color: var(--background2-color);
+    border: 1px solid var(--grey);
+    cursor: pointer;
+}
+
+.filterWrapper{
+    position: relative;
+    width: 100%;
+}
+
+.filterWrapper > *{
+    position: absolute;
+    right: 0px;
+    top: -2rem;
+}
+
+
+.filterButton{
+    width: fit-content;
+    font-family: 'Roboto', 'Arial';
+    font-style: normal;
+    border-radius: 3px;
+    font-weight: 300;
+    font-size: 12px;
+    padding: 6px 10px 6px 10px;
+    color: var(--text);
+    cursor: pointer;
+    transition: 0.3s, smooth;
+}
+
+.buttonSub{
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.buttonSub:hover, .buttonSub:focus{
+    color: var(--text);
+}
+
+.buttonShowSub{
+    width: fit-content;
+    font-family: 'Roboto', 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    padding: 6px 20px 6px 20px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: 0.3s, smooth;
+}
+
+.buttonShowSub:hover, .buttonShowSub:focus{
+    color: var(--text);
+}

@@ -1,0 +1,101 @@
+.doneButton{
+    margin-top: 0.1rem;
+    height: 0.8rem;
+    width: 0.8rem;
+    background-color: var(--background2-color);
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.task1{
+    display: grid;
+    grid-template-columns: 1.5rem 7rem;
+    padding-left: 0.5rem;
+    padding-top: 0.05rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.4rem;
+    vertical-align: middle;
+    color: var(--text);
+}
+
+.task1Sub{
+    display: grid;
+    grid-template-columns: 7rem;
+    padding-left: 0.5rem;
+    padding-top: 0.05rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.4rem;
+    vertical-align: middle;
+    color: var(--text);
+}
+
+.subTask{
+    display: grid;
+    grid-template-columns: 1.5rem 7rem;
+    padding-left: 0.5rem;
+    padding-top: 0.2rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.subtaskWrapper{
+    padding-top: 0.2rem;
+    text-align: left;
+}
+
+.subtaskPreWrapper{
+    margin-left: 0.8rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 7rem;
+}
+
+.borderSubtask{
+    min-width: 7rem;
+    margin-top: 0.5rem;
+}
+
+
+.taskWrapper{
+    background-color: var(--background2-color);
+    border-top: 10px solid var(--yellow);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 2px solid grey;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 0.7rem;
+    margin: -0.70rem;
+    outline: none;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    max-height: 10rem;
+    max-width: 10rem;
+    min-width: 10rem;
+    overflow-y: auto;
+}
+
+.taskName{
+    vertical-align: middle;
+}
+
+.taskNameDone{
+    vertical-align: middle;
+    text-decoration: line-through;
+    text-decoration-color: grey;
+    color:grey;
+}
+
+.taskNameSub{
+    max-width: 2rem;
+}
+
+.doneCheckmark{
+    position: relative;
+    height: 1.1rem;
+    width: 2rem;
+    vertical-align: middle;
+    top: -0.33rem;
+    right: 0.45rem;
+}

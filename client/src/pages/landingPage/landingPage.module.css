@@ -1,0 +1,106 @@
+.navbar{
+    position: relative;
+    
+    overflow: hidden;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--background2-color);
+    color: var(--text);
+    box-shadow: 0px 1px 4px 1px #b8b8b8;
+}
+
+.navbarWrapper{
+    max-width: 1200px;
+    margin: auto;
+    background-color: var(--background2-color);
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.left{
+    text-align: right;
+    margin: auto;
+    margin-right: 4rem;
+
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: auto auto;
+
+}
+
+.link{
+    text-decoration: none;
+    margin: auto;
+    transition: 0.3s, smooth;
+}
+
+.linkText{
+    font-family: 'Roboto', 'Times New Roman';
+    font-style: normal;
+    color: #585858;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s, smooth;
+}
+
+.linkText:hover{
+    color: black;
+}
+
+.landingWrapper{
+    width: 100%;
+    height: 40vh;
+    min-height: 200px;
+    max-height: 300px;
+    background-color: #f4f7ff;
+}
+
+.landing{
+    width: 60vw;
+    max-width: 1000px;
+    padding: 7rem;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+
+.landingBottom{
+    width: 100%;
+    height: 20vh;
+    min-height: 20px;
+    max-height: 40px;
+    background-color: #f4f7ff;
+    border-bottom-left-radius: 120%;
+    border-bottom-right-radius: 120%;
+}
+
+.header{
+    width: 40vw;
+    max-width: 500px;
+    color: var(--primary-color)
+}
+
+.actionButton{
+    border-radius: 2rem;
+    font-size: 16px;
+    padding: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.actionButton:hover{
+    color: var(--green);
+}
+
+.buttonLogin:hover{
+    color: var(--green);
+}
+.buttonLogOut:hover{
+    color: var(--red);
+}
+.name{
+    margin-top: 0.5rem;
+
+}

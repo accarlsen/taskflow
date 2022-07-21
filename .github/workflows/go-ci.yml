@@ -1,0 +1,52 @@
+name: Set up test DB and run tests 
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+              
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15
+
+    - name: Get server go mods
+      run: cd service1; go get; go get github.com/kelseyhightower/envconfig; go get gopkg.in/mgo.v2 
+    
+    - name: Get tests go mods
+      run: cd service1/tests; go get github.com/kelseyhightower/envconfig; go get gopkg.in/mgo.v2
+
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.3.0
+      with:
+        mongodb-version: 4.4.3
+        mongodb-replica-set: test-rs
+
+    - name: Test
+      run: cd service1/tests; go test 
+      env:
+        CI: true
+    - name: deploy server using akhileshns
+      uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+        heroku_api_key: 6f44ba07-a909-4540-aa88-708d53888bd4
+        heroku_app_name: task-flow-favn
+        heroku_email: mohammad.alnayef94@gmail.com
+        usedocker: true
+        appdir: "service1"
+    - name: deploy client using akhileshns
+      uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+        heroku_api_key: 6f44ba07-a909-4540-aa88-708d53888bd4
+        heroku_app_name: task-flow-1
+        heroku_email: mohammad.alnayef94@gmail.com
+        usedocker: true
+        appdir: "client"
+
+      

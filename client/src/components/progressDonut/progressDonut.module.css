@@ -1,0 +1,23 @@
+.svg {
+    display: block;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.svgCircleBg {
+    fill: none;
+}
+
+.svgCircle {
+    fill: none;
+}
+.svgCircleText {
+    font-family: 'Roboto';
+    text-align: center;
+    font-size: 1rem;
+    text-anchor: middle;
+    fill: var(--text);
+    font-weight: bold;
+    line-height: 140%;
+    transform: translate(-0%, 0.4rem);
+}

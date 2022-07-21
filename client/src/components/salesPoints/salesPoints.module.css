@@ -1,0 +1,33 @@
+.todoSVG{
+    width: 100%;
+    height: auto;
+    max-height: 160px;
+    margin-top: auto;
+    margin-bottom: 0px;
+}
+
+.illustrationsWrapper{
+    display: grid;
+    grid-template-rows: 200px auto auto auto;
+    margin-bottom: 2rem;
+}
+
+.illustrations{
+    width: fit-content;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(180px, 28%) );
+    grid-gap: 5rem;
+}
+
+.illustrationsText{
+    margin: auto;
+    margin-top: 2rem;
+    width: 90%;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--text)
+    
+}

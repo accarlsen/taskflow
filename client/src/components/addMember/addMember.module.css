@@ -1,0 +1,12 @@
+.wrapper{
+    width: fit-content;
+    display: grid;
+    margin: auto;
+    grid-template-columns: auto auto auto;
+    z-index: 1005;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 1px #c4c4c4;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

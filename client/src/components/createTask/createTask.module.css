@@ -1,0 +1,213 @@
+.wrapper{
+    width: fit-content;
+    display: grid;
+    grid-template-rows: auto auto;
+    border-radius: 5px;
+    margin-top: 1rem;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.weight{
+    display: grid;
+    grid-template-columns: 3.5rem 3.5rem;
+}
+
+.weight > input{
+    width: 3.5rem;
+}
+
+.assigned{
+    width: 100%;
+    max-width: 10rem;
+    margin-left: 1.4rem;
+    min-width: 25px;
+    display: inline;
+    margin-bottom: 1rem;
+}
+
+.wrapperPre{
+    width: 100%;
+    text-align: center;
+}
+
+.wrapper2{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.innerWrapper{
+    width: 34rem;
+    border: solid 1px var(--grey);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.row1{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 34rem;
+    column-gap: 1rem;
+}
+
+.row2{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 0.7rem;
+}
+
+.name{
+    width: 100%;
+    max-width: 33rem;
+    min-width: 100px;
+}
+
+.description{
+    width: 15rem;
+    height: 5rem;
+    resize: none;
+    border: solid 1px grey;
+}
+
+.inline{
+    display: grid;
+    grid-template-columns: 5rem 8rem;
+    width: fit-content;
+}
+
+.add{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+
+/*Row 2*/
+.dlWrapper{
+    position: absolute;
+    z-index: 20000;
+    display: grid;
+    grid-template-rows: auto auto;
+    background-color: var(--background2-color);
+    border: solid 1px var(--grey-light);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.dlButton{
+    width: fit-content;
+    font-family: 'Roboto', 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 0px 1px 2px 1px var(--shadow-color);;
+    border-radius: 5px;
+    color: var(--text);
+    background-color: var(--grey-light);
+    cursor: pointer;
+}
+
+.dlDate{
+    width: 6.5rem !important;
+    font-size: 11px !important;
+}
+
+.dlTime{
+    width: 4rem !important;
+    font-size: 11px !important;
+}
+
+/* + People */
+.userSelectWrapper {
+    position: absolute;
+    left: 6.6rem;
+    display: grid;
+    grid-template-rows: repeat(1.2rem);
+    height: fit-content;
+    width: 8rem; 
+    cursor: pointer;
+    overflow: hidden;
+  
+    border-radius: 6px;
+    border: 1px solid var(--grey-light);
+    background-color: var(--grey-light);
+  
+  }
+  
+  .userSelectedDisplay {
+    padding: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 6px;
+    background-color: var(--grey-light);
+  }
+  
+  .userSelectSearch{
+    border: none;
+    outline: none;;
+    font-family: 'Roboto';
+    font-size: 12px;
+    background-color: var(--background-color);
+  
+    width: 100%;
+    height: 1.2rem;
+  
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  
+  .userSelectOptions {
+    height: 1.5rem;
+    width: 100%;
+    background-color: var(--background2-color);
+    border-top: 1px solid var(--grey-light);
+  }
+
+  .userSelectOptionsSubtask{
+    height: 1.5rem;
+    width: 100%;
+    background-color: var(--background2-color);
+    border-top: 1px solid var(--grey-light);
+  }
+  
+  .userSelectOptions:hover, .userSelectOptionsSubtask:hover {
+    background-color: var(--grey-light);
+  }
+  
+  .userSelectOptions > * {
+    font-family: "Roboto";
+    font-size: 12px;
+    padding-top: 6px;
+    height: 1.5rem;
+    vertical-align: middle;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 10px;
+  
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .userSelectOptionsSubtask > * {
+    font-family: "Roboto";
+    font-size: 12px;
+    padding-top: 6px;
+    height: 1.5rem;
+    vertical-align: middle;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 10px;
+  
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }

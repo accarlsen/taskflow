@@ -1,0 +1,9 @@
+runtime: go115
+
+main: ./server.go
+
+service: api
+
+env_variables:
+    FRONTEND_HOST: <FRONTEND-HOST-DOMAIN>
+    DOMAIN: <FRONTEND-HOST-DOMAIN>
