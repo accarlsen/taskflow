@@ -1,7 +1,6 @@
 # Taskflow
 
-Taskflow is a collaborative task- and management tool made with **Golang**, **GraphQL**, **React** and **MongoDB**. The purpose of the software is to improve the
-communication of task interdependencies in software projects. In order to do this, the software tool incorperates the unique aspect of using **interactive flowcharts** as well as tradional task lists to communicate complex interdependencies of assignments and tasks that constitute larger projects and use the underlying directional graph datastructure to filter out unneccesary information at the different stages of projects. 
+Taskflow is a collaborative task- and project management tool made with **Golang**, **GraphQL**, **React** and **MongoDB**. The purpose of the software is to improve the communication of task interdependencies in software projects. In order to do this, the software tool incorperates the unique aspect of using **interactive flowcharts** as well as tradional task lists to communicate complex interdependencies of assignments and tasks that constitute larger projects and use the underlying directional graph datastructure to filter out unneccesary information at the different stages of projects. 
 
 This project was part of the bachelor thesis of Mohammed Al Nayef, Gaute Wierød Rønning and myself. The **fullstack** software solution was used in our experiments as well as tested by software teams from Trygg Forsikring and Equinor. The research paper resulting of this work can be found [here](https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/2778050/no.ntnu%3ainspera%3a83510435%3a83529130.pdf?sequence=1&isAllowed=y).
 
