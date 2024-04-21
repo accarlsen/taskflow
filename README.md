@@ -7,7 +7,7 @@ This project was part of the bachelor thesis of Mohammed Al Nayef, Gaute Wierød
 
 
 ## System Architecture
-The project consists of a client using javascript, HTML and CSS together with the frameworks ReactJS and Apollo Client. The client communicates with teh server using GraphQL. The server is made in **golang** with the framework **gqlgen** to enable handling of GraphQL requests and responses. 
+The project consists of a client using javascript, HTML and CSS together with the frameworks ReactJS and Apollo Client. The client communicates with the server using GraphQL. The server is made in **golang** with the framework **gqlgen** to enable handling of GraphQL requests and responses. 
 
 
 ![taskflow-system-architecture](https://user-images.githubusercontent.com/50367062/180308112-e0e1dee4-30a6-4813-a956-789189f29b17.JPG)
